@@ -1,6 +1,6 @@
 import { IRoom } from "./models";
 
-export const Rooms: Array<IRoom> = [
+export const rooms: Array<IRoom> = [
     {
         id: 1,
         reservations: []

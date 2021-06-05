@@ -4,7 +4,7 @@ import axios from 'axios';
 
 export const getRooms = () => {
     return (dispatch: any) => {
-        return axios.get('http://localhost:3001/rooms').then(
+        return axios.get('http://localhost:8080/rooms').then(
             ({ data }) => dispatch({ type: ACTION_TYPES.GET_ROOMS, payload: data }),
             err => console.log(err)
         );
