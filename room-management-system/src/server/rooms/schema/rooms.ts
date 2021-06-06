@@ -1,12 +1,8 @@
 import mongoose, { Schema } from 'mongoose';
 
 const reservationSchema = new Schema({
-    _id:{
-        type:String,
-        required:true
-    },
     roomId: {
-        type: Number,
+        type: String,
         required: true
     },
     reservedBy: {
@@ -28,10 +24,6 @@ const reservationSchema = new Schema({
 })
 
 const roomSchema = new Schema({
-    id: {
-        type: String,
-        required: true
-    },
     reservations: [reservationSchema]
 
 })

@@ -9,7 +9,7 @@ import DialogTitle from '@material-ui/core/DialogTitle';
 import moment from 'moment';
 import { IReservation } from '../../types/types';
 import { useDispatch } from 'react-redux';
-import { addReservation } from '../../store/rooms/actions';
+import { addReservation, getRooms } from '../../store/rooms/actions';
 
 
 
@@ -38,7 +38,6 @@ function AddDialog({ id, reservations, update, setUpdate }: IDialogProps) {
         e.preventDefault();
         if (isValidDate(fromDate, toDate)) {
             const newReservation: IReservation = {
-                _id:"",
                 roomId: id,
                 reservedBy: reservedBy,
                 from: dateTimeConverter(fromDate),
@@ -46,6 +45,7 @@ function AddDialog({ id, reservations, update, setUpdate }: IDialogProps) {
                 notes: note,
             }
             addReservation(newReservation);
+            dispatch(getRooms());
             setOpen(false);
             setUpdate(!update);
             setIsError(false);

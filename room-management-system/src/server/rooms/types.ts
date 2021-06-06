@@ -1,5 +1,5 @@
 export interface IReservation {
-    _id: string;
+    _id?: string;
     roomId: string;
     reservedBy: string;
     from: string;
@@ -8,6 +8,6 @@ export interface IReservation {
 }
 
 export interface IRoom {
-    _id: string;
+    _id?: string;
     reservations: Array<IReservation>;
 }

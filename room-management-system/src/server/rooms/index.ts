@@ -9,7 +9,12 @@ RoomsRouter.get('/', async (req: Request, res: Response) => {
     res.status(200);
 });
 
+
 RoomsRouter.post('/reservation', async (req: Request, res: Response) => {
-    Room.insertMany(req.body);
-    res.status(201).send(req.body);
+    const { roomId } = req.body;
+    const room = await Room.findById(roomId);
+    await Room.findByIdAndUpdate(roomId,{
+        "reservations":[...room.reservations,req.body]
+    });
+    res.status(201).send();
 })

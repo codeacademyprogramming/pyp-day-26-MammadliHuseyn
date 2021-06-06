@@ -11,11 +11,7 @@ export const getRooms = () => {
     };
 };
 
-export const addReservation = (reservation: IReservation) => { //:IAction
-    // return {
-    //     type: ACTION_TYPES.ADD_RESERVATION_TO_ROOM,
-    //     payload: reservation
-    // }
+export const addReservation = (reservation: IReservation) => {
     axios.post("http://localhost:8080/rooms/reservation", reservation)
         .then(({data}) => console.log(data));
 }

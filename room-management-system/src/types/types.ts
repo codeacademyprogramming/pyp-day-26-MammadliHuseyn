@@ -1,7 +1,7 @@
 import { ACTION_TYPES } from "../store/rooms/actionTypes";
 
 export interface IReservation {
-    _id: string;
+    _id?: string;
     roomId: string;
     reservedBy: string;
     from: string;
