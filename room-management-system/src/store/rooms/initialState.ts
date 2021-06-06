@@ -2,59 +2,59 @@ import { IRoom } from "../../types/types";
 
 export const initialState: Array<IRoom> = [
     {
-        id: 1,
-        reservations: []
+        "_id": "1",
+        "reservations": []
     },
     {
-        id: 2,
-        reservations: []
+        "_id": "2",
+        "reservations": []
     },
     {
-        id: 3,
-        reservations: []
+        "_id": "3",
+        "reservations": []
     },
     {
-        id: 4,
-        reservations: []
+        "_id": "4",
+        "reservations": []
     },
     {
-        id: 5,
-        reservations: []
+        "_id": "5",
+        "reservations": []
     },
     {
-        id: 6,
-        reservations: []
+        "_id": "6",
+        "reservations": []
     },
     {
-        id: 7,
-        reservations: []
+        "_id": "7",
+        "reservations": []
     },
     {
-        id: 8,
-        reservations: []
+        "_id": "8",
+        "reservations": []
     },
     {
-        id: 9,
-        reservations: []
+        "_id": "9",
+        "reservations": []
     },
     {
-        id: 10,
-        reservations: []
+        "_id": "10",
+        "reservations": []
     },
     {
-        id: 11,
-        reservations: []
+        "_id": "11",
+        "reservations": []
     },
     {
-        id: 12,
-        reservations: []
+        "_id": "12",
+        "reservations": []
     },
     {
-        id: 13,
-        reservations: []
+        "_id": "13",
+        "reservations": []
     },
     {
-        id: 14,
-        reservations: []
+        "_id": "14",
+        "reservations": []
     },
 ]

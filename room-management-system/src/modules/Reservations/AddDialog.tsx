@@ -16,7 +16,7 @@ import { addReservation } from '../../store/rooms/actions';
 interface IDialogProps {
     update: boolean;
     setUpdate: Function;
-    id: number;
+    id: string;
     reservations: Array<IReservation>
 }
 function AddDialog({ id, reservations, update, setUpdate }: IDialogProps) {
@@ -38,14 +38,14 @@ function AddDialog({ id, reservations, update, setUpdate }: IDialogProps) {
         e.preventDefault();
         if (isValidDate(fromDate, toDate)) {
             const newReservation: IReservation = {
-                id: reservations[reservations.length - 1]?.id + 1 || 1,
+                _id:"",
                 roomId: id,
                 reservedBy: reservedBy,
                 from: dateTimeConverter(fromDate),
                 to: dateTimeConverter(toDate),
                 notes: note,
             }
-            dispatch(addReservation(newReservation));
+            addReservation(newReservation);
             setOpen(false);
             setUpdate(!update);
             setIsError(false);

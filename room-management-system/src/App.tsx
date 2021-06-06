@@ -11,7 +11,7 @@ function App() {
         <Route exact path="/">
           <Rooms />
         </Route>
-        <Route path="/:roomId">
+        <Route exact path="/reservations/:roomId">
           <Reservations />
         </Route>
         <Redirect to="/" />

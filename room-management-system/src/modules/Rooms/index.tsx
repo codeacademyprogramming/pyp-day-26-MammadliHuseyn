@@ -10,7 +10,7 @@ const Rooms = () => {
     const rooms: Array<IRoom> = useSelector((state: Array<IRoom>) => state);
     const history = useHistory();
     const getReservations = (room: IRoom) => {
-        history.push(`/${room.id}`);
+        history.push(`/reservations/${room._id}`);
     }
     const dispatch = useDispatch();
 
@@ -38,7 +38,7 @@ const Rooms = () => {
                     {COORDINATES.map((coord, idx) =>
                         <RoomItem
                             coord={coord}
-                            room={rooms.find(room => room.id === idx + 1)!}
+                            room={rooms[idx]}
                             key={coord}
                             onClick={getReservations}
                         />

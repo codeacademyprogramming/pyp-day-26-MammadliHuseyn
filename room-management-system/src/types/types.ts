@@ -1,8 +1,8 @@
 import { ACTION_TYPES } from "../store/rooms/actionTypes";
 
 export interface IReservation {
-    id: number;
-    roomId: number;
+    _id: string;
+    roomId: string;
     reservedBy: string;
     from: string;
     to: string;
@@ -10,7 +10,7 @@ export interface IReservation {
 }
 
 export interface IRoom {
-    id: number;
+    _id: string;
     reservations: Array<IReservation>;
 }
 

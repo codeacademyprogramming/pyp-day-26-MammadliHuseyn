@@ -8,6 +8,6 @@ export interface IReservation {
 }
 
 export interface IRoom {
-    id: number;
+    _id: string;
     reservations: Array<IReservation>;
 }

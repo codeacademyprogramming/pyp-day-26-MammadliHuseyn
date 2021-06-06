@@ -56,5 +56,5 @@ export const rooms: Array<IRoom> = [
     {
         id: 14,
         reservations: []
-    },
+    }
 ]

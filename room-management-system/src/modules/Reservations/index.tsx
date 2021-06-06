@@ -1,5 +1,5 @@
-import { Button } from '@material-ui/core';
 import React from 'react';
+import { Button } from '@material-ui/core';
 import { Container, Table } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import { useHistory, useParams } from 'react-router';
@@ -12,7 +12,7 @@ const Reservations = () => {
         roomId: string
     }
     const { roomId }: IUrlParams = useParams();
-    const room = useSelector((state: Array<IRoom>) => state.find(room => room.id === +roomId)!);
+    const room = useSelector((state: Array<IRoom>) => state.find(room => room._id === roomId)!);
     const [update, setUpdate] = React.useState(false);
     const history = useHistory();
     const goToHome = () => {
@@ -23,7 +23,7 @@ const Reservations = () => {
             <div className="d-flex justify-content-between">
                 <Button variant="outlined" onClick={goToHome}>Go back to rooms</Button>
                 <AddDialog
-                    id={room.id}
+                    id={room._id}
                     reservations={room.reservations}
                     update={update}
                     setUpdate={setUpdate}
@@ -44,7 +44,7 @@ const Reservations = () => {
                         <ReservationItem
                             idx={idx + 1}
                             reservation={res}
-                            key={res.id} />
+                            key={res._id} />
                     )}
                     {room.reservations.length < 1 &&
                         <tr><td colSpan={5} className="text-center">empty</td></tr>
